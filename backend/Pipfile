@@ -4,10 +4,6 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-fastmcp = "*"
-google-genai = "*"
-yfinance = "*"
-python-dotenv = "*"
 
 [dev-packages]
 
