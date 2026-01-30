@@ -98,6 +98,7 @@ async def get_buffett_response_stream(history_data: list):
     try:
         # 메시지 변환
         current_question = history_data[-1].parts
+        print(current_question)
         # RAG로 버핏의 지혜 먼저 검색
         wisdom_context = get_buffett_wisdom(current_question)
         
@@ -149,6 +150,7 @@ async def get_buffett_response_stream(history_data: list):
             # 텍스트가 있으면 즉시 내보냄
             if chunk.text:
                 yield chunk.text
+                print(chunk.text)
             # 텍스트가 없더라도 내부적으로 도구 호출(function_call)이 일어나는 중임
             else:
                 print("버핏이 데이터를 분석 중입니다...") # 터미널 로그
