@@ -148,7 +148,7 @@ export default function Home() {
           </button>
         </div>
         <p className="text-[10px] text-center mt-3 text-stone-400 font-sans">
-          ※ 실제 투자 결정 전에는 반드시 전문가와 상의하게. 이것은 인공지능의 조언일 뿐이라네.
+          ※ 실제 투자 결정 전에는 반드시 신중하게
         </p>
       </div>
     </main>

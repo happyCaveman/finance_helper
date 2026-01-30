@@ -6,7 +6,11 @@ __pycache__/
 venv/
 env/
 
+# 벡터 DB 관련 (용량이 크고 로컬에서 생성 가능하므로 제외)
+**/buffett_db/
+chroma.sqlite3
 
+data/*.txt
 # --- Node.js (Next.js) ---
 node_modules/
 .next/
