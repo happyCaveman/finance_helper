@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  # 백엔드 서비스
+  backend:
+    build: ./backend
+    container_name: finance-backend
+    ports:
+      - "8080:8080"
+    env_file:
+      - ./backend/.env
+    volumes:
+      - ./backend/buffett_db:/app/buffett_db # 데이터 유지를 위한 볼륨 설정
+    restart: always
+
+  # 프론트엔드 서비스
+  frontend:
+    build: ./frontend
+    container_name: finance-frontend
+    ports:
+      - "3000:3000"
+    environment:
+      - NEXT_PUBLIC_API_URL=http://13.124.27.88:8080 # 실제 서버 IP로 변경
+      - BACKEND_URL=http://backend:8080
+    depends_on:
+      - backend
+    restart: always
