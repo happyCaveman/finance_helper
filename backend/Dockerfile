@@ -20,4 +20,4 @@ RUN pip install --no-cache-dir --upgrade pip && \
 COPY . .
 
 # 7. 서비스 실행 (App Runner 기본 포트인 8080 사용 권장)
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8080"]
+CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8080"]
